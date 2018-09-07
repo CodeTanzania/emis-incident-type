@@ -10,6 +10,9 @@ const path = require('path');
 const _ = require('lodash');
 const async = require('async');
 const mongoose = require('mongoose');
+const { env } = require('@codetanzania/majifix-common');
+const { getStrings } = env;
+
 // mongoose.set('debug', true);
 const {
   IncidentType,
@@ -18,6 +21,8 @@ const {
   app
 } = require(path.join(__dirname, '..'));
 let samples = IncidentType.fake(20);
+const DISASTER_PHASES = getStrings('DISASTER_PHASES', ['Mitigation']);
+
 
 
 /* connect to mongoose */
@@ -35,6 +40,14 @@ function boot() {
     },
 
     function seed(next) {
+     samples = _.map(samples, function (sample, index) {
+        if (index % 2 === 0) {
+          sample.phases =
+            _.take(DISASTER_PHASES, (index % DISASTER_PHASES.length) +
+              1);
+        }
+        return sample;
+      });
       IncidentType.create(samples, next);
     }
 
