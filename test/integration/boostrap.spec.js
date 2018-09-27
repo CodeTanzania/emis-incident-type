@@ -16,7 +16,8 @@ function wipe(done) {
 
 //setup database
 before(function (done) {
-  mongoose.connect('mongodb://localhost/emis-incident-type', done);
+  const options = { useNewUrlParser: true };
+  mongoose.connect('mongodb://localhost/emis-incident-type', options, done);
 });
 
 

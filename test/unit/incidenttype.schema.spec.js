@@ -27,7 +27,6 @@ describe('IncidentType', () => {
       expect(name.type.name).to.be.equal('String');
       expect(name.trim).to.be.true;
       expect(name.required).to.be.true;
-      // expect(name.unique).to.be.true;
       expect(name.searchable).to.be.true;
       expect(name.fake).to.exist;
 
@@ -81,7 +80,23 @@ describe('IncidentType', () => {
       expect(color.type.name).to.be.equal('String');
       expect(color.trim).to.be.true;
       expect(color.uppercase).to.be.true;
-      expect(color.default).to.be.exist;
+      expect(color.default).to.exist;
+
+    });
+
+    it('should have description field', () => {
+
+      const description = IncidentType.schema.tree.description;
+      const instance = IncidentType.schema.paths.description.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(description).to.exist;
+      expect(description).to.be.an('object');
+      expect(description.type).to.be.a('function');
+      expect(description.type.name).to.be.equal('String');
+      expect(description.trim).to.be.true;
+      expect(description.index).to.be.true;
+      expect(description.fake).to.exist;
 
     });
 
