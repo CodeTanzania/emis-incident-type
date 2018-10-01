@@ -402,7 +402,7 @@
             "type": "Object[]",
             "optional": false,
             "field": "data",
-            "description": "<p>List of incidenttypes</p>"
+            "description": "<p>List of incident types</p>"
           },
           {
             "group": "Success 200",
@@ -486,14 +486,14 @@
             "type": "Number",
             "optional": false,
             "field": "total",
-            "description": "<p>Total number of status</p>"
+            "description": "<p>Total number of incident types</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "size",
-            "description": "<p>Number of status returned</p>"
+            "description": "<p>Number of incident types returned</p>"
           },
           {
             "group": "Success 200",
@@ -528,7 +528,7 @@
             "type": "Date",
             "optional": false,
             "field": "lastModified",
-            "description": "<p>Date and time at which latest status was last modified</p>"
+            "description": "<p>Date and time at which latest incident types was last modified</p>"
           }
         ]
       },
