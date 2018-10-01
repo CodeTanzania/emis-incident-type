@@ -8,6 +8,8 @@ A representation of an entity which classify emergency(or disaster) from the mos
 
 It makes partial use of peril classification system proposed IRDR.
 
+[Demo](https://emis-incident-type.herokuapp.com/v1/incidenttypes)
+
 ## Requirements
 
 - [NodeJS v8.11.1+](https://nodejs.org)
