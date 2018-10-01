@@ -1,0 +1,32 @@
+{
+  "name": "emis-incident-type",
+  "description": "A representation of an entity which classify emergency(or disaster or risk) from the most generalised(family) to the most specific(peril).",
+  "repository": "https://github.com/CodeTanzania/emis-incident-type.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "incident",
+    "type",
+    "hazard",
+    "peril",
+    "family",
+    "emergency",
+    "risk",
+    "classification"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}
