@@ -3,15 +3,23 @@
 
 /**
  * @name emis-incident-type
- * @description A representation of an entity which provides
- * a way to set flags on service requests(issues) in order
- * to track their progress.
+ * @description A representation of an entity which classify
+ * emergency(or disaster) from the most generalised(family) to the
+ * most specific(peril).
  *
- * @author Benson Maruchu <benmaruchu@gmail.com>
+ * It makes partial use of peril classification system proposed IRDR.
+ *
+ * @see {@link https://en.wikipedia.org/wiki/Disaster}
+ * @see {@link http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf}
+ * @see {@link https://www.emdat.be/guidelines}
+ * @see {@link http://www.glidenumber.net/glide/public/search/search.jsp?}
+ *
  * @author lally elias <lallyelias87@gmail.com>
- * @since  0.1.0
- * @version 0.1.0
  * @license MIT
+ * @since 0.1.0
+ * @version 1.0.0
+ * @public
+ *
  * @example
  *
  * const { app } = require('@codetanzania/emis-incident-type');

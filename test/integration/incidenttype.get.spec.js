@@ -88,7 +88,7 @@ describe('IncidentType', () => {
           expect(results.data).to.exist;
           expect(results.data).to.have.length.at.least(1);
           expect(results.total).to.exist;
-          expect(results.total).to.be.equal(1);
+          expect(results.total).to.be.at.least(1);
           expect(results.limit).to.exist;
           expect(results.limit).to.be.equal(10);
           expect(results.skip).to.exist;
@@ -96,7 +96,7 @@ describe('IncidentType', () => {
           expect(results.page).to.exist;
           expect(results.page).to.be.equal(1);
           expect(results.pages).to.exist;
-          expect(results.pages).to.be.equal(1);
+          expect(results.pages).to.be.at.least(1);
           expect(results.lastModified).to.exist;
           expect(_.maxBy(results.data, 'updatedAt').updatedAt)
             .to.be.at.most(results.lastModified);
@@ -114,7 +114,7 @@ describe('IncidentType', () => {
           expect(results.data).to.exist;
           expect(results.data).to.have.length.at.least(1);
           expect(results.total).to.exist;
-          expect(results.total).to.be.equal(1);
+          expect(results.total).to.be.at.least(1);
           expect(results.limit).to.exist;
           expect(results.limit).to.be.equal(10);
           expect(results.skip).to.exist;
@@ -122,7 +122,7 @@ describe('IncidentType', () => {
           expect(results.page).to.exist;
           expect(results.page).to.be.equal(1);
           expect(results.pages).to.exist;
-          expect(results.pages).to.be.equal(1);
+          expect(results.pages).to.be.at.least(1);
           expect(results.lastModified).to.exist;
           expect(_.maxBy(results.data, 'updatedAt').updatedAt)
             .to.be.at.most(results.lastModified);

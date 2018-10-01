@@ -4,14 +4,10 @@
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
+const { IncidentType } = require(path.join(__dirname, '..', '..'));
 
 
-/* declarations */
-const IncidentType =
-  require(path.join(__dirname, '..', '..', 'lib', 'incidenttype.model'));
-
-
-describe('IncidentType', () => {
+describe('Model', () => {
 
   describe('Statics', () => {
 
@@ -23,11 +19,9 @@ describe('IncidentType', () => {
     it('should expose autopulate as options', () => {
       expect(IncidentType.OPTION_AUTOPOPULATE).to.exist;
       expect(IncidentType.OPTION_AUTOPOPULATE)
-        .to.be.eql({
-          select: { name: 1, nature: 1, family: 1, color: 1 },
-          maxDepth: 1
-        });
+        .to.be.eql({ maxDepth: 1 });
     });
 
   });
+
 });

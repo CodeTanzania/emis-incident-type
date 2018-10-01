@@ -6,6 +6,8 @@
 
 A representation of an entity which classify emergency(or disaster) from the most generalised(family) to the most specific(peril).
 
+It makes partial use of peril classification system proposed IRDR.
+
 ## Requirements
 
 - [NodeJS v8.11.1+](https://nodejs.org)
@@ -22,21 +24,9 @@ npm install @codetanzania/emis-incident-type --save
 ## Usage
 
 ```js
-const mongoose = require('mongoose');
 const { app } = require('@codetanzania/emis-incident-type');
-
-mongoose.connect(process.env.MONGODB_URI);
-
-app.start(function (error) {
-  ...
-});
+app.start((error) => { ... });
 ```
-
-## References
-- [Disaster](https://en.wikipedia.org/wiki/Disaster)
-- [IRDR Peril Classification and Hazard Glossary](http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf)
-- [EM-DAT Guidelines](https://www.emdat.be/guidelines)
-- [Glide Number](http://www.glidenumber.net/glide/public/search/search.jsp?)
 
 ## Testing
 
@@ -64,13 +54,12 @@ npm test
 
 It will be nice, if you open an issue first so that we can know what is going on, then, fork this repo and push in your ideas. Do not forget to add a bit of test(s) of what value you adding.
 
-## References
 
-- [Open311 GeoReport v2](http://wiki.open311.org/GeoReport_v2/)
-- [popolo project](https://www.popoloproject.com/)
-- [http://geojson.org/](http://geojson.org/)
-- [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
-- [https://opengovdata.io/](https://opengovdata.io/)
+## References
+- [Disaster](https://en.wikipedia.org/wiki/Disaster)
+- [IRDR Peril Classification and Hazard Glossary](http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf)
+- [EM-DAT Guidelines](https://www.emdat.be/guidelines)
+- [Glide Number](http://www.glidenumber.net/glide/public/search/search.jsp?)
 
 ## Licence
 

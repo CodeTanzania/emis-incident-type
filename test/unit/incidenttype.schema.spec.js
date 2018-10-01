@@ -4,102 +4,99 @@
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
+const { Schema } = require('mongoose');
+const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { NATURES, FAMILIES, CAP_CATEGORIES } = IncidentType;
 
 
-/* declarations */
-const IncidentType =
-  require(path.join(__dirname, '..', '..', 'lib', 'incidenttype.model'));
+describe('Schema', () => {
 
+  it('should have name field', () => {
+    const name = IncidentType.path('name');
 
-describe('IncidentType', () => {
+    expect(name).to.exist;
+    expect(name).to.be.instanceof(Schema.Types.String);
+    expect(name.options.trim).to.be.true;
+    expect(name.options.required).to.be.true;
+    expect(name.options.index).to.be.true;
+    expect(name.options.searchable).to.be.true;
+    expect(name.options.fake).to.exist;
+  });
 
-  describe('Schema', () => {
+  it('should have given code field', () => {
+    const givenCode = IncidentType.path('code.given');
 
-    it('should have name field', () => {
+    expect(givenCode).to.exist;
+    expect(givenCode).to.be.instanceof(Schema.Types.String);
+    expect(givenCode.options.trim).to.be.true;
+    expect(givenCode.options.uppercase).to.be.true;
+    expect(givenCode.options.required).to.be.true;
+    expect(givenCode.options.index).to.be.true;
+    expect(givenCode.options.searchable).to.be.true;
+  });
 
-      const name = IncidentType.schema.tree.name;
-      const instance = IncidentType.schema.paths.name.instance;
+  it('should have cap code field', () => {
+    const capCode = IncidentType.path('code.cap');
 
-      expect(instance).to.be.equal('String');
-      expect(name).to.exist;
-      expect(name).to.be.an('object');
-      expect(name.type).to.be.a('function');
-      expect(name.type.name).to.be.equal('String');
-      expect(name.trim).to.be.true;
-      expect(name.required).to.be.true;
-      expect(name.searchable).to.be.true;
-      expect(name.fake).to.exist;
+    expect(capCode).to.exist;
+    expect(capCode).to.be.instanceof(Schema.Types.String);
+    expect(capCode.options.trim).to.be.true;
+    expect(capCode.options.required).to.be.true;
+    expect(capCode.options.enum).to.exist;
+    expect(capCode.options.enum).to.be.eql(CAP_CATEGORIES);
+    expect(capCode.options.index).to.be.true;
+    expect(capCode.options.searchable).to.be.true;
+    expect(capCode.options.fake).to.be.true;
+  });
 
-    });
+  it('should have nature field', () => {
+    const nature = IncidentType.path('nature');
 
-    it('should have nature field', () => {
+    expect(nature).to.exist;
+    expect(nature).to.be.instanceof(Schema.Types.String);
+    expect(nature.options.trim).to.be.true;
+    expect(nature.options.required).to.be.true;
+    expect(nature.options.enum).to.exist;
+    expect(nature.options.enum).to.be.eql(NATURES);
+    expect(nature.options.index).to.be.true;
+    expect(nature.options.searchable).to.be.true;
+    expect(nature.options.fake).to.exist;
+  });
 
-      const nature = IncidentType.schema.tree.nature;
-      const instance = IncidentType.schema.paths.nature.instance;
+  it('should have family field', () => {
+    const family = IncidentType.path('family');
 
-      expect(instance).to.be.equal('String');
-      expect(nature).to.exist;
-      expect(nature).to.be.an('object');
-      expect(nature.type).to.be.a('function');
-      expect(nature.type.name).to.be.equal('String');
-      expect(nature.trim).to.be.true;
-      expect(nature.required).to.be.true;
-      expect(nature.index).to.be.true;
-      expect(nature.searchable).to.be.true;
-      expect(nature.fake).to.be.true;
+    expect(family).to.exist;
+    expect(family).to.be.instanceof(Schema.Types.String);
+    expect(family.options.trim).to.be.true;
+    expect(family.options.required).to.be.true;
+    expect(family.options.enum).to.exist;
+    expect(family.options.enum).to.be.eql(FAMILIES);
+    expect(family.options.index).to.be.true;
+    expect(family.options.searchable).to.be.true;
+    expect(family.options.fake).to.exist;
+  });
 
-    });
+  it('should have color field', () => {
+    const color = IncidentType.path('color');
 
-    it('should have family field', () => {
+    expect(color).to.exist;
+    expect(color).to.be.instanceof(Schema.Types.String);
+    expect(color.options.trim).to.be.true;
+    expect(color.options.uppercase).to.be.true;
+    expect(color.options.default).to.exist;
+    expect(color.options.fake).to.exist;
+  });
 
-      const family = IncidentType.schema.tree.family;
-      const instance = IncidentType.schema.paths.family.instance;
+  it('should have description field', () => {
+    const description = IncidentType.path('description');
 
-      expect(instance).to.be.equal('String');
-      expect(family).to.exist;
-      expect(family).to.be.an('object');
-      expect(family.type).to.be.a('function');
-      expect(family.type.name).to.be.equal('String');
-      expect(family.trim).to.be.true;
-      expect(family.required).to.be.true;
-      expect(family.index).to.be.true;
-      expect(family.searchable).to.be.true;
-      expect(family.fake).to.be.true;
-
-    });
-
-    it('should have color field', () => {
-
-      const color = IncidentType.schema.tree.color;
-      const instance = IncidentType.schema.paths.color.instance;
-
-      expect(instance).to.be.equal('String');
-      expect(color).to.exist;
-      expect(color).to.be.an('object');
-      expect(color.type).to.be.a('function');
-      expect(color.type.name).to.be.equal('String');
-      expect(color.trim).to.be.true;
-      expect(color.uppercase).to.be.true;
-      expect(color.default).to.exist;
-
-    });
-
-    it('should have description field', () => {
-
-      const description = IncidentType.schema.tree.description;
-      const instance = IncidentType.schema.paths.description.instance;
-
-      expect(instance).to.be.equal('String');
-      expect(description).to.exist;
-      expect(description).to.be.an('object');
-      expect(description.type).to.be.a('function');
-      expect(description.type.name).to.be.equal('String');
-      expect(description.trim).to.be.true;
-      expect(description.index).to.be.true;
-      expect(description.fake).to.exist;
-
-    });
-
+    expect(description).to.exist;
+    expect(description).to.be.instanceof(Schema.Types.String);
+    expect(description.options.trim).to.be.true;
+    expect(description.options.index).to.be.true;
+    expect(description.options.searchable).to.be.true;
+    expect(description.options.fake).to.exist;
   });
 
 });

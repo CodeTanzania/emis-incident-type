@@ -1,7 +1,7 @@
 {
   "name": "@codetanzania/emis-incident-type",
   "version": "1.0.0",
-  "description": "A representation of an entity which classify emergency(or disaster) from the most generalised(family) to the most specific(peril).",
+  "description": "A representation of an entity which classify emergency(or disaster or risk) from the most generalised(family) to the most specific(peril).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
@@ -22,17 +22,14 @@
     "peril",
     "family",
     "emergency",
+    "risk",
     "classification"
   ],
-  "contributors": [{
+  "contributors": [
+    {
       "name": "lykmapipo",
       "email": "lallyelias87@gmail.com",
       "url": "https://github.com/lykmapipo"
-    },
-    {
-      "name": "benMaruchu",
-      "email": "benmaruchu@gmail.com",
-      "url": "https://github.com/BenMaruchu"
     }
   ],
   "license": "MIT",
@@ -54,7 +51,7 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.2.17",
+    "mongoose": "^5.3.0",
     "sinon": "^6.3.4",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
@@ -62,14 +59,14 @@
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "@codetanzania/majifix-common": "^0.9.2",
+    "@codetanzania/majifix-common": "^0.10.0",
     "@lykmapipo/express-common": "^0.9.1",
     "async": "^2.6.1",
     "express": "^4.16.3",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "mongoose-locale-schema": "^0.2.0",
-    "mongoose-rest-actions": "^0.17.1",
+    "mongoose-rest-actions": "^0.18.0",
     "randomcolor": "^0.5.3"
   },
   "engines": {
