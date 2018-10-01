@@ -25,13 +25,11 @@
     "risk",
     "classification"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-incident-type/issues",
@@ -39,7 +37,23 @@
   },
   "homepage": "https://github.com/CodeTanzania/emis-incident-type",
   "sandbox": {
-    "url": "https://emis-incident-type.herokuapp.com/v1/incidenttypes"
+    "url": "https://emis-incident-type.herokuapp.com/v1/incidenttypes",
+    "apiDoc": "https://codetanzania.github.io/emis-incident-type/",
+    "client_id": "",
+    "client_secret": "",
+    "urls": [{
+      "resource": "IncidentType",
+      "link": "https://emis-incident-type.herokuapp.com/v1/incidenttypes",
+      "scopes": [
+        "incidenttypes:*"
+      ],
+      "methods": [
+        "get",
+        "post",
+        "put",
+        "patch"
+      ]
+    }]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
