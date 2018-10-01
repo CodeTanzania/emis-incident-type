@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-incident-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A representation of an entity which classify emergency(or disaster or risk) from the most generalised(family) to the most specific(peril).",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,25 @@
   },
   "homepage": "https://github.com/CodeTanzania/emis-incident-type",
   "sandbox": {
-    "url": "https://emis-incident-type.herokuapp.com/v1/incidenttypes"
+    "url": "https://emis-incident-type.herokuapp.com",
+    "apiDoc": "https://codetanzania.github.io/emis-incident-type/",
+    "client_id": "",
+    "client_secret": "",
+    "urls": [
+      {
+        "resource": "IncidentType",
+        "link": "https://emis-incident-type.herokuapp.com/v1/incidenttypes",
+        "scopes": [
+          "incidenttype:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      }
+    ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
