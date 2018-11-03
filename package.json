@@ -24,11 +24,9 @@
     "loss",
     "exposure",
     "resilience",
-    "vulnerability",
     "warning",
     "assessment",
     "drm",
-    "drr",
     "mitigation",
     "preparedness",
     "response",
@@ -37,8 +35,7 @@
     "incident",
     "nature",
     "peril",
-    "family",
-    "classification"
+    "family"
   ],
   "contributors": [
     {
