@@ -1,18 +1,33 @@
 {
   "name": "emis-incident-type",
-  "description": "A representation of an entity which classify emergency(or disaster or risk) from the most generalised(family) to the most specific(peril).",
+  "description": "A representation of an entity which classify emergency(or disaster) from the most generalised(family) to the most specific(peril).",
   "repository": "https://github.com/CodeTanzania/emis-incident-type.git",
   "keywords": [
     "codetanzania",
+    "lykmapipo",
     "emis",
     "emis-module",
-    "incident",
-    "type",
+    "disaster",
+    "emergency",
     "hazard",
+    "risk",
+    "loss",
+    "exposure",
+    "resilience",
+    "vulnerability",
+    "warning",
+    "assessment",
+    "drm",
+    "drr",
+    "mitigation",
+    "preparedness",
+    "response",
+    "recovery",
+    "event",
+    "incident",
+    "nature",
     "peril",
     "family",
-    "emergency",
-    "risk",
     "classification"
   ],
   "addons": [
@@ -20,6 +35,10 @@
   ],
   "env":
   {
+    "HEROKU":
+    {
+      "value": "true"
+    },
     "NPM_CONFIG_PRODUCTION":
     {
       "value": "false"

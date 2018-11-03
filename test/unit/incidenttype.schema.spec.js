@@ -9,7 +9,7 @@ const { IncidentType } = require(path.join(__dirname, '..', '..'));
 const { NATURES, FAMILIES, CAP_CATEGORIES } = IncidentType;
 
 
-describe('Schema', () => {
+describe('IncidentType Schema', () => {
 
   it('should have name field', () => {
     const name = IncidentType.path('name');
