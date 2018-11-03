@@ -16,12 +16,24 @@ describe('IncidentType Instance', () => {
     expect(incidentType.preValidate.name).to.be.equal('preValidate');
   });
 
-  it('`preValidate` should set color and given code', (done) => {
+  it('`preValidate` should set given code', (done) => {
     const incidentType = IncidentType.fake();
     expect(incidentType.code.given).to.not.exist;
 
     incidentType.preValidate((error) => {
       expect(incidentType.code.given).to.exist;
+      done(error);
+    });
+  });
+
+  it('`preValidate` should set color', (done) => {
+    const incidentType = IncidentType.fake();
+    incidentType.color = undefined;
+
+    expect(incidentType.color).to.not.exist;
+
+    incidentType.preValidate((error) => {
+      expect(incidentType.color).to.exist;
       done(error);
     });
   });

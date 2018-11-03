@@ -58,6 +58,7 @@ describe('IncidentType Schema', () => {
     expect(name).to.be.instanceof(Schema.Types.String);
     expect(name.options.trim).to.be.true;
     expect(name.options.required).to.be.true;
+    expect(name.options.startcase).to.be.true;
     expect(name.options.index).to.be.true;
     expect(name.options.searchable).to.be.true;
     expect(name.options.fake).to.exist;
@@ -91,6 +92,17 @@ describe('IncidentType Schema', () => {
     expect(family.options.fake).to.exist;
   });
 
+  it('should have description field', () => {
+    const description = IncidentType.path('description');
+
+    expect(description).to.exist;
+    expect(description).to.be.instanceof(Schema.Types.String);
+    expect(description.options.trim).to.be.true;
+    expect(description.options.index).to.be.true;
+    expect(description.options.searchable).to.be.true;
+    expect(description.options.fake).to.exist;
+  });
+
   it('should have color field', () => {
     const color = IncidentType.path('color');
 
@@ -102,15 +114,60 @@ describe('IncidentType Schema', () => {
     expect(color.options.fake).to.exist;
   });
 
-  it('should have description field', () => {
-    const description = IncidentType.path('description');
+  it('should have icon field', () => {
+    const icon = IncidentType.path('icon');
 
-    expect(description).to.exist;
-    expect(description).to.be.instanceof(Schema.Types.String);
-    expect(description.options.trim).to.be.true;
-    expect(description.options.index).to.be.true;
-    expect(description.options.searchable).to.be.true;
-    expect(description.options.fake).to.exist;
+    expect(icon).to.exist;
+    expect(icon).to.be.instanceof(Schema.Types.String);
+    expect(icon.options.trim).to.be.true;
+  });
+
+  it('should have characteristics field', () => {
+    const characteristics = IncidentType.path('characteristics');
+
+    expect(characteristics).to.exist;
+    expect(characteristics).to.be.instanceof(Schema.Types.Array);
+    expect(characteristics.options.compact).to.be.true;
+    expect(characteristics.options.duplicate).to.be.false;
+    expect(characteristics.options.index).to.be.true;
+    expect(characteristics.options.searchable).to.be.true;
+    expect(characteristics.options.fake).to.exist;
+  });
+
+  it('should have causes field', () => {
+    const causes = IncidentType.path('causes');
+
+    expect(causes).to.exist;
+    expect(causes).to.be.instanceof(Schema.Types.Array);
+    expect(causes.options.compact).to.be.true;
+    expect(causes.options.duplicate).to.be.false;
+    expect(causes.options.index).to.be.true;
+    expect(causes.options.searchable).to.be.true;
+    expect(causes.options.fake).to.exist;
+  });
+
+  it('should have areas field', () => {
+    const areas = IncidentType.path('areas');
+
+    expect(areas).to.exist;
+    expect(areas).to.be.instanceof(Schema.Types.Array);
+    expect(areas.options.compact).to.be.true;
+    expect(areas.options.duplicate).to.be.false;
+    expect(areas.options.index).to.be.true;
+    expect(areas.options.searchable).to.be.true;
+    expect(areas.options.fake).to.exist;
+  });
+
+  it('should have risks field', () => {
+    const risks = IncidentType.path('risks');
+
+    expect(risks).to.exist;
+    expect(risks).to.be.instanceof(Schema.Types.Array);
+    expect(risks.options.compact).to.be.true;
+    expect(risks.options.duplicate).to.be.false;
+    expect(risks.options.index).to.be.true;
+    expect(risks.options.searchable).to.be.true;
+    expect(risks.options.fake).to.exist;
   });
 
 });
