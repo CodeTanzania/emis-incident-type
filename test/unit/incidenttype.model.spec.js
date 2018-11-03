@@ -6,6 +6,27 @@ const path = require('path');
 const { expect } = require('chai');
 const { IncidentType } = require(path.join(__dirname, '..', '..'));
 
+describe('IncidentType Instance', () => {
+
+  it('`preValidate` should be a function', () => {
+    const incidentType = IncidentType.fake();
+    expect(incidentType.preValidate).to.exist;
+    expect(incidentType.preValidate).to.be.a('function');
+    expect(incidentType.preValidate.length).to.be.equal(1);
+    expect(incidentType.preValidate.name).to.be.equal('preValidate');
+  });
+
+  it('`preValidate` should set color and given code', (done) => {
+    const incidentType = IncidentType.fake();
+    expect(incidentType.code.given).to.not.exist;
+
+    incidentType.preValidate((error) => {
+      expect(incidentType.code.given).to.exist;
+      done(error);
+    });
+  });
+
+});
 
 describe('IncidentType Statics', () => {
 

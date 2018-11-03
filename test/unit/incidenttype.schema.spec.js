@@ -11,16 +11,18 @@ const { NATURES, FAMILIES, CAP_CATEGORIES } = IncidentType;
 
 describe('IncidentType Schema', () => {
 
-  it('should have name field', () => {
-    const name = IncidentType.path('name');
+  it('should have main field', () => {
+    const main = IncidentType.path('main');
 
-    expect(name).to.exist;
-    expect(name).to.be.instanceof(Schema.Types.String);
-    expect(name.options.trim).to.be.true;
-    expect(name.options.required).to.be.true;
-    expect(name.options.index).to.be.true;
-    expect(name.options.searchable).to.be.true;
-    expect(name.options.fake).to.exist;
+    expect(main).to.exist;
+    expect(main).to.be.an.instanceof(Schema.Types.ObjectId);
+    expect(main.options).to.exist;
+    expect(main.options).to.be.an('object');
+    expect(main.options.type).to.exist;
+    expect(main.options.ref).to.exist;
+    expect(main.options.exists).to.be.true;
+    expect(main.options.autopopulate).to.exist;
+    expect(main.options.index).to.be.true;
   });
 
   it('should have given code field', () => {
@@ -47,6 +49,18 @@ describe('IncidentType Schema', () => {
     expect(capCode.options.index).to.be.true;
     expect(capCode.options.searchable).to.be.true;
     expect(capCode.options.fake).to.be.true;
+  });
+
+  it('should have name field', () => {
+    const name = IncidentType.path('name');
+
+    expect(name).to.exist;
+    expect(name).to.be.instanceof(Schema.Types.String);
+    expect(name.options.trim).to.be.true;
+    expect(name.options.required).to.be.true;
+    expect(name.options.index).to.be.true;
+    expect(name.options.searchable).to.be.true;
+    expect(name.options.fake).to.exist;
   });
 
   it('should have nature field', () => {

@@ -32,6 +32,11 @@ const { app } = require('@codetanzania/emis-incident-type');
 app.start((error) => { ... });
 ```
 
+## Demo
+- [View Demo](https://emis-incident-type.herokuapp.com/v1/incidenttypes)
+- [View apidoc](https://codetanzania.github.io/emis-incident-type/)
+
+
 ## Testing
 
 - Clone this repository
