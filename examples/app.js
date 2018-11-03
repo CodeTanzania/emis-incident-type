@@ -17,7 +17,7 @@ const {
   info,
   app
 } = require(path.join(__dirname, '..'));
-let samples = IncidentType.fake(32);
+let samples = require(path.join(__dirname, 'IncidentTypes.json'));
 
 
 /* connect to mongoose */
