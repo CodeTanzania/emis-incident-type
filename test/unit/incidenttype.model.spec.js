@@ -18,10 +18,10 @@ describe('IncidentType Instance', () => {
 
   it('`preValidate` should set given code', (done) => {
     const incidentType = IncidentType.fake();
-    expect(incidentType.code.given).to.not.exist;
+    expect(incidentType.code).to.not.exist;
 
     incidentType.preValidate((error) => {
-      expect(incidentType.code.given).to.exist;
+      expect(incidentType.code).to.exist;
       done(error);
     });
   });

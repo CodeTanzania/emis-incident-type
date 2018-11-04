@@ -20,48 +20,10 @@ describe('IncidentType Schema', () => {
     expect(main.options).to.be.an('object');
     expect(main.options.type).to.exist;
     expect(main.options.ref).to.exist;
+    expect(main.options.index).to.be.true;
     expect(main.options.exists).to.be.true;
     expect(main.options.autopopulate).to.exist;
-    expect(main.options.index).to.be.true;
-  });
-
-  it('should have given code field', () => {
-    const givenCode = IncidentType.path('code.given');
-
-    expect(givenCode).to.exist;
-    expect(givenCode).to.be.instanceof(Schema.Types.String);
-    expect(givenCode.options.trim).to.be.true;
-    expect(givenCode.options.uppercase).to.be.true;
-    expect(givenCode.options.required).to.be.true;
-    expect(givenCode.options.index).to.be.true;
-    expect(givenCode.options.searchable).to.be.true;
-  });
-
-  it('should have cap code field', () => {
-    const capCode = IncidentType.path('code.cap');
-
-    expect(capCode).to.exist;
-    expect(capCode).to.be.instanceof(Schema.Types.String);
-    expect(capCode.options.trim).to.be.true;
-    expect(capCode.options.required).to.be.true;
-    expect(capCode.options.enum).to.exist;
-    expect(capCode.options.enum).to.be.eql(CAP_CATEGORIES);
-    expect(capCode.options.index).to.be.true;
-    expect(capCode.options.searchable).to.be.true;
-    expect(capCode.options.fake).to.be.true;
-  });
-
-  it('should have name field', () => {
-    const name = IncidentType.path('name');
-
-    expect(name).to.exist;
-    expect(name).to.be.instanceof(Schema.Types.String);
-    expect(name.options.trim).to.be.true;
-    expect(name.options.required).to.be.true;
-    expect(name.options.startcase).to.be.true;
-    expect(name.options.index).to.be.true;
-    expect(name.options.searchable).to.be.true;
-    expect(name.options.fake).to.exist;
+    expect(main.options.autopopulate).to.be.an('object');
   });
 
   it('should have nature field', () => {
@@ -69,6 +31,9 @@ describe('IncidentType Schema', () => {
 
     expect(nature).to.exist;
     expect(nature).to.be.instanceof(Schema.Types.String);
+    expect(nature.options).to.exist;
+    expect(nature.options).to.be.an('object');
+    expect(nature.options.type).to.exist;
     expect(nature.options.trim).to.be.true;
     expect(nature.options.required).to.be.true;
     expect(nature.options.enum).to.exist;
@@ -90,6 +55,45 @@ describe('IncidentType Schema', () => {
     expect(family.options.index).to.be.true;
     expect(family.options.searchable).to.be.true;
     expect(family.options.fake).to.exist;
+  });
+
+  it('should have given code field', () => {
+    const code = IncidentType.path('code');
+
+    expect(code).to.exist;
+    expect(code).to.be.instanceof(Schema.Types.String);
+    expect(code.options.trim).to.be.true;
+    expect(code.options.uppercase).to.be.true;
+    expect(code.options.required).to.be.true;
+    expect(code.options.index).to.be.true;
+    expect(code.options.searchable).to.be.true;
+  });
+
+  it('should have cap code field', () => {
+    const cap = IncidentType.path('cap');
+
+    expect(cap).to.exist;
+    expect(cap).to.be.instanceof(Schema.Types.String);
+    expect(cap.options.trim).to.be.true;
+    expect(cap.options.required).to.be.true;
+    expect(cap.options.enum).to.exist;
+    expect(cap.options.enum).to.be.eql(CAP_CATEGORIES);
+    expect(cap.options.index).to.be.true;
+    expect(cap.options.searchable).to.be.true;
+    expect(cap.options.fake).to.be.true;
+  });
+
+  it('should have name field', () => {
+    const name = IncidentType.path('name');
+
+    expect(name).to.exist;
+    expect(name).to.be.instanceof(Schema.Types.String);
+    expect(name.options.trim).to.be.true;
+    expect(name.options.required).to.be.true;
+    expect(name.options.startcase).to.be.true;
+    expect(name.options.index).to.be.true;
+    expect(name.options.searchable).to.be.true;
+    expect(name.options.fake).to.exist;
   });
 
   it('should have description field', () => {
