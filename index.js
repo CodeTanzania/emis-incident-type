@@ -3,16 +3,19 @@
 
 /**
  * @name emis-incident-type
+ * @module emis-incident-type
  * @description A representation of an entity which classify
- * emergency(or disaster) from the most generalised(family) to the
- * most specific(peril).
- *
- * It makes partial use of peril classification system proposed IRDR.
+ * emergency(or disaster) from the most generalised(nature and family) to the
+ * most specific (main event and peril).
  *
  * @see {@link https://en.wikipedia.org/wiki/Disaster}
+ * @see {@link https://www.unisdr.org/we/inform/terminology}
+ * @see {@link https://www.emdat.be/Glossary}
  * @see {@link http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf}
+ * @see {@link http://cred.be/sites/default/files/DisCatClass_264.pdf}
+ * @see {@link http://cred.be/sites/default/files/DisCatClass_264.pdf}
  * @see {@link https://www.emdat.be/guidelines}
- * @see {@link http://www.glidenumber.net/glide/public/search/search.jsp?}
+ * @see {@link http://www.glidenumber.net/glide/public/about.jsp}
  *
  * @author lally elias <lallyelias87@gmail.com>
  * @license MIT
@@ -23,7 +26,7 @@
  * @example
  *
  * const { app } = require('@codetanzania/emis-incident-type');
- * app.start();
+ * app.start(error => { ... });
  *
  */
 
@@ -31,6 +34,8 @@
 /* dependencies */
 const path = require('path');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+require('mongoose-schema-jsonschema')(mongoose);
 const app = require('@lykmapipo/express-common');
 
 
@@ -59,7 +64,7 @@ const IncidentType =
 
 
 /* import routers*/
-const router =
+const incidentTypeRouter =
   require(path.join(__dirname, 'lib', 'incidenttype.http.router'));
 
 
@@ -72,11 +77,11 @@ exports.IncidentType = IncidentType;
 
 
 /* export incident type router */
-exports.incidentRouter = exports.router = router;
+exports.incidentTypeRouter = incidentTypeRouter;
 
 
 /* export router api version */
-exports.apiVersion = router.apiVersion;
+exports.apiVersion = incidentTypeRouter.apiVersion;
 
 
 /* export app */
@@ -86,7 +91,7 @@ Object.defineProperty(exports, 'app', {
     //TODO bind oauth middlewares authenticate, token, authorize
 
     /* bind incident type router */
-    app.mount(router);
+    app.mount(incidentTypeRouter);
     return app;
   }
 

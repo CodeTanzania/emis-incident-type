@@ -4,11 +4,13 @@
 [![Dependencies Status](https://david-dm.org/CodeTanzania/emis-incident-type/status.svg?style=flat-square)](https://david-dm.org/CodeTanzania/emis-incident-type)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-incident-type/tree/develop)
 
-A representation of an entity which classify emergency(or disaster) from the most generalised(family) to the most specific(peril).
-
-It makes partial use of peril classification system proposed IRDR.
+A representation of an entity which classify emergency(or disaster) from the most generalised(nature and family) to the most specific (main event and peril).
 
 [Demo](https://emis-incident-type.herokuapp.com/v1/incidenttypes)
+
+## Domain Model
+
+![EMIS Incident Type Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-incident-type/develop/specifications/incidenttype.model.png)
 
 ## Requirements
 
@@ -29,6 +31,11 @@ npm install @codetanzania/emis-incident-type --save
 const { app } = require('@codetanzania/emis-incident-type');
 app.start((error) => { ... });
 ```
+
+## Demo
+- [View Demo](https://emis-incident-type.herokuapp.com/v1/incidenttypes)
+- [View apidoc](https://codetanzania.github.io/emis-incident-type/)
+
 
 ## Testing
 
@@ -59,9 +66,13 @@ It will be nice, if you open an issue first so that we can know what is going on
 
 ## References
 - [Disaster](https://en.wikipedia.org/wiki/Disaster)
+- [UNISDR - Terminology on Disaster Risk Reduction](https://www.unisdr.org/we/inform/terminology)
+- [EM-DAT - Glossary](https://www.emdat.be/Glossary)
 - [IRDR Peril Classification and Hazard Glossary](http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf)
+- [Disaster Category Classification and Peril Terminology for Operational Purposes](http://cred.be/sites/default/files/DisCatClass_264.pdf)
+- [Disaster category classification and peril terminology for operational purposes](http://cred.be/sites/default/files/DisCatClass_264.pdf)
 - [EM-DAT Guidelines](https://www.emdat.be/guidelines)
-- [Glide Number](http://www.glidenumber.net/glide/public/search/search.jsp?)
+- [Glide Number](http://www.glidenumber.net/glide/public/about.jsp)
 
 ## Licence
 
