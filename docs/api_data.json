@@ -64,43 +64,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -113,8 +114,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -135,7 +164,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"name\": \"Flood\",\n  \"code\":{\n    \"cap\":\"Mat\",\n    \"given\":\"NMF\"\n  },\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
+          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"code\":\"NHF\",\n  \"cap\":\"Mat\",\n  \"name\": \"Flood\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
           "type": "json"
         }
       ]
@@ -236,43 +265,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -285,8 +315,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -307,7 +365,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"name\": \"Flood\",\n  \"code\":{\n    \"cap\":\"Mat\",\n    \"given\":\"NMF\"\n  },\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
+          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"code\":\"NHF\",\n  \"cap\":\"Mat\",\n  \"name\": \"Flood\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
           "type": "json"
         }
       ]
@@ -341,6 +399,51 @@
           "type": "json"
         }
       ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/incidenttypes/schema",
+    "title": "Get Incident Type Schema",
+    "version": "1.0.0",
+    "name": "GetIncidentTypeSchema",
+    "group": "IncidentType",
+    "description": "<p>Returns incident type json schema definition</p>",
+    "filename": "lib/incidenttype.http.router.js",
+    "groupTitle": "",
+    "sampleRequest": [
+      {
+        "url": "https://emis-incident-type.herokuapp.com/v1/incidenttypes/schema"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": true,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": "<p>Accepted content type</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": true,
+            "field": "Accept-Encoding",
+            "defaultValue": "gzip, deflate",
+            "description": "<p>Accepted encoding type</p>"
+          }
+        ]
+      }
     }
   },
   {
@@ -415,43 +518,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "data.name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "data.code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "data.code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "data.code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "data.nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "data.family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data.name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -464,8 +568,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "data.description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "data.icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "data.characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "data.causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "data.areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "data.risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -535,7 +667,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n   \"data\": [\n   {\n     \"_id\": \"5aeed5f37e422f2743b97eb0\",\n      \"name\": \"Flood\",\n      \"code\":{\n        \"cap\":\"Mat\",\n        \"given\":\"NMF\"\n      },\n      \"nature\": \"Natural\",\n      \"family\": \"Hydrological\",\n      \"color\": \"#45b726\",\n      \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n      \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n    }\n   ],\n  \"total\": 10,\n  \"size\": 2,\n  \"limit\": 2,\n  \"skip\": 0,\n  \"page\": 1,\n  \"pages\": 5,\n  \"lastModified\": \"2018-05-06T10:19:04.910Z\"\n}",
+          "content": " {\n   \"data\": [\n   {\n     \"_id\": \"5aeed5f37e422f2743b97eb0\",\n     \"nature\": \"Natural\",\n     \"family\": \"Hydrological\",\n     \"code\":\"NHF\",\n     \"cap\":\"Mat\",\n     \"name\": \"Flood\",\n     \"color\": \"#45b726\",\n     \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n     \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n    }\n   ],\n  \"total\": 10,\n  \"size\": 2,\n  \"limit\": 2,\n  \"skip\": 0,\n  \"page\": 1,\n  \"pages\": 5,\n  \"lastModified\": \"2018-05-06T10:19:04.910Z\"\n}",
           "type": "json"
         }
       ]
@@ -636,43 +768,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -685,8 +818,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -707,7 +868,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"name\": \"Flood\",\n  \"code\":{\n    \"cap\":\"Mat\",\n    \"given\":\"NMF\"\n  },\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
+          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"code\":\"NHF\",\n  \"cap\":\"Mat\",\n  \"name\": \"Flood\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
           "type": "json"
         }
       ]
@@ -808,43 +969,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -857,8 +1019,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -879,7 +1069,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"name\": \"Flood\",\n  \"code\":{\n    \"cap\":\"Mat\",\n    \"given\":\"NMF\"\n  },\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
+          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"code\":\"NHF\",\n  \"cap\":\"Mat\",\n  \"name\": \"Flood\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
           "type": "json"
         }
       ]
@@ -980,43 +1170,44 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Human readable name of the incident type(or main event) e.g Flood etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "code",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "code.given",
-            "description": "<p>Human readable given code of the alert e.g NMF etc. If not specified it will be generated from nature, family and name of incident type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "code.cap",
-            "description": "<p>Human readable Common Alert Protocol(CAP) code of the alert e.g Geo etc.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
             "field": "nature",
-            "description": "<p>Human readable nature(or origin) of the incident i.e Natural or Technological/Man-Made.</p>"
+            "description": "<p>Human readable nature(or origin) of an incident type(or disaster) i.e Natural or Technological/Man-Made.</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "family",
-            "description": "<p>Human readable family(group) of the incident e.g Biological, Climatological etc.</p>"
+            "description": "<p>Human readable family(group) of an incident(or disaster) i.e Biological, Climatological etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Human readable given code of an incident type(or disaster). If not specified it will be generated from first letters of nature, family and name of incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "cap",
+            "defaultValue": "Other",
+            "description": "<p>Human readable Common Alert Protocol(CAP) code(or category) of an incident type(or disaster).</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Human readable name of an incident type(or disaster) e.g Flood etc.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>A brief summary(definition) about an incident type if available i.e additional details that clarify what is an incident type(or disaster).</p>"
           },
           {
             "group": "Success 200",
@@ -1029,8 +1220,36 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "description",
-            "description": "<p>A brief summary about incident type if available i.e additional details that clarify what is incident type.</p>"
+            "field": "icon",
+            "description": "<p>An icon(in url, base64, svg formats) used to differentiate incident types(or disaster) visually.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "characteristics",
+            "description": "<p>Human readable typical or noticeable features associated with an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "causes",
+            "description": "<p>Human readable possible actions or conditions that may lead to an incident type(or disaster) event.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "areas",
+            "description": "<p>Areas(i.e city, state, village etc) liable to suffer from an incident type(or disaster) events.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String[]",
+            "optional": true,
+            "field": "risks",
+            "description": "<p>Human readable possible risks or injuries that may be caused by an incident type(or disaster) event.</p>"
           },
           {
             "group": "Success 200",
@@ -1051,7 +1270,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"name\": \"Flood\",\n  \"code\":{\n    \"cap\":\"Mat\",\n    \"given\":\"NMF\"\n  },\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
+          "content": "{\n  \"_id\": \"5aeed5f37e422f2743b97eb0\",\n  \"nature\": \"Natural\",\n  \"family\": \"Hydrological\",\n  \"code\":\"NHF\",\n  \"cap\":\"Mat\",\n  \"name\": \"Flood\",\n  \"color\": \"#45b726\",\n  \"createdAt\": \"2018-05-06T10:16:19.230Z\",\n  \"updatedAt\": \"2018-05-06T10:16:19.230Z\"\n}",
           "type": "json"
         }
       ]
