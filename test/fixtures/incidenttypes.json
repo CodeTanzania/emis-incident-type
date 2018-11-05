@@ -1,0 +1,25 @@
+[
+{
+  "nature": "Technological",
+  "family": "Hydrological",
+  "cap": "Infra",
+  "name": "Feed",
+  "description": "Sapiente voluptatem id eum sequi qui voluptatem iste et. Aut eos ut repudiandae. Libero exercitationem ut alias cumque illum sint.",
+  "color": "#FCBADD",
+  "characteristics": ["Voluptatem voluptas asperiores et voluptatem."],
+  "causes": ["Ratione voluptatem dolor voluptatibus ut dignissimos enim unde ea."],
+  "areas": ["Dejon Harbor"],
+  "risks": ["Velit itaque libero cum."]
+},
+{
+  "nature": "Other",
+  "family": "Biological",
+  "cap": "CBRNE",
+  "name": "Microchip",
+  "description": "Aut corporis atque accusamus porro. Ea sint error esse velit est. Soluta rerum voluptas qui explicabo at atque esse debitis. Ex earum ut praesentium eos corporis qui ut. Sint molestiae possimus culpa et corporis dolorem inventore et.",
+  "color": "#CBB9F7",
+  "characteristics": ["Voluptates esse quia."],
+  "causes": ["Aut officiis beatae deserunt nemo sint dolores ducimus pariatur."],
+  "areas": ["Corkery Spring"],
+  "risks": ["Sed est error ut nihil eos soluta nulla corporis et."]
+}]
