@@ -1,3 +1,7 @@
+# v1.1.1 - 2018-11-08
+- Allow seed from environment seed file
+- Force latest dependencies
+
 # v1.1.0 - 2018-11-05
 - Refactor incident type model
 - Add seeding capability
