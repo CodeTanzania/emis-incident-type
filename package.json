@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-incident-type",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A representation of an entity which classify emergency(or disaster) from the most generalised(nature and family) to the most specific (main event and peril).",
   "main": "index.js",
   "scripts": {
@@ -90,7 +90,6 @@
     "mocha": "^5.2.0",
     "moment": "^2.22.2",
     "mongoose": "^5.3.10",
-    "mongoose-locale-schema": "^0.2.1",
     "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15",
     "sinon": "^7.1.1",
@@ -104,7 +103,6 @@
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "mongoose-locale-schema": "^0.2.1",
     "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15"
   },
