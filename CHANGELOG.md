@@ -1,3 +1,6 @@
+# v1.2.0 - 2018-11-09
+- Build latest API Doc
+
 # v1.1.1 - 2018-11-08
 - Allow seed from environment seed file
 - Force latest dependencies
