@@ -32,55 +32,62 @@
 
 
 /* dependencies */
-const path = require('path');
 const _ = require('lodash');
-const mongoose = require('mongoose');
-require('mongoose-schema-jsonschema')(mongoose);
+const { include } = require('@lykmapipo/include');
 const app = require('@lykmapipo/express-common');
+const pkg = include(__dirname, 'package.json');
+const IncidentType = include(__dirname, 'lib', 'incidenttype.model');
+const incidentTypeRouter = include(__dirname, 'lib', 'incidenttype.http.router');
 
 
-/* declarations */
-const pkg = require(path.join(__dirname, 'package.json'));
-const fields = [
-  'name',
-  'description',
-  'version',
-  'license',
-  'homepage',
-  'repository',
-  'bugs',
-  'sandbox',
-  'contributors'
-];
+/**
+ * @name info
+ * @description package information
+ * @type {Object}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
+exports.info = _.merge({}, _.pick(pkg, [
+  'name', 'description', 'version', 'license',
+  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
+]));
 
 
-/* extract information from package.json */
-const info = _.merge({}, _.pick(pkg, fields));
-
-
-/* import models */
-const IncidentType =
-  require(path.join(__dirname, 'lib', 'incidenttype.model'));
-
-
-/* import routers*/
-const incidentTypeRouter =
-  require(path.join(__dirname, 'lib', 'incidenttype.http.router'));
-
-
-/* export package(module) info */
-exports.info = info;
-
-
-/* export incident type model */
+/**
+ * @name IncidentType
+ * @description IncidentType model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.IncidentType = IncidentType;
 
 
-/* export incident type router */
+/**
+ * @name incidentTypeRouter
+ * @description incidentType http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.incidentTypeRouter = incidentTypeRouter;
 
 
-/* export router api version */
+/**
+ * @name apiVersion
+ * @description http router api version
+ * @type {String}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
 exports.apiVersion = incidentTypeRouter.apiVersion;
 
 
@@ -88,9 +95,7 @@ exports.apiVersion = incidentTypeRouter.apiVersion;
 Object.defineProperty(exports, 'app', {
   get() {
 
-    //TODO bind oauth middlewares authenticate, token, authorize
-
-    /* bind incident type router */
+    /*@todo bind oauth middlewares authenticate, token, authorize */
     app.mount(incidentTypeRouter);
     return app;
   }

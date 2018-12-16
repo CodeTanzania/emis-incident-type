@@ -1,6 +1,6 @@
 define({
   "name": "emis-incident-type",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A representation of an entity which classify emergency(or disaster) from the most generalised(nature and family) to the most specific (main event and peril).",
   "title": "EMIS - Incident Type",
   "url": "https://emis-incident-type.herokuapp.com/v1",
@@ -13,7 +13,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-11-09T12:02:36.203Z",
+    "time": "2018-12-16T23:29:20.618Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
