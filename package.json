@@ -76,6 +76,7 @@
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.11.1",
+    "@lykmapipo/mongoose-test-helpers": "^0.2.3",
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-apidoc": "^0.11.0",
