@@ -1,3 +1,9 @@
+# v1.3.0 - 2018-12-16
+- Build latest apidoc
+- Add taggable plugin
+- Force latest dependencies & audit fix
+- Improve example app
+
 # v1.2.0 - 2018-11-09
 - Build latest API Doc
 
