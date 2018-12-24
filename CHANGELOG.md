@@ -1,3 +1,6 @@
+# v1.3.2 - 2018-12-24
+- Allow copy nature, family, cap, color & icon from main incident type
+
 # v1.3.1 - 2018-12-24
 - Build latest apidoc
 - Force latest dependencies & audit fix
