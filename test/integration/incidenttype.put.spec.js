@@ -2,16 +2,15 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { IncidentType } = include(__dirname, '..', '..');
 
 
 describe('IncidentType Static Put', () => {
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
@@ -44,18 +43,15 @@ describe('IncidentType Static Put', () => {
     });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
 
 });
 
 
 describe('IncidentType Instance Put', () => {
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
+
 
   let incidenttype = IncidentType.fake();
 
@@ -86,8 +82,7 @@ describe('IncidentType Instance Put', () => {
     });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
+
 
 });

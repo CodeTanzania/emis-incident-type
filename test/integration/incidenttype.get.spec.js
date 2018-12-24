@@ -2,17 +2,16 @@
 
 
 /* dependencies */
-const path = require('path');
 const _ = require('lodash');
 const { expect } = require('chai');
-const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { IncidentType } = include(__dirname, '..', '..');
 
 
 describe('IncidentType Get', () => {
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
 
   let incidenttypes = IncidentType.fake(32);
 
@@ -118,8 +117,6 @@ describe('IncidentType Get', () => {
     });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
 
 });
