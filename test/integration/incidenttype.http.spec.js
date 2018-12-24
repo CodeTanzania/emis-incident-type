@@ -2,21 +2,16 @@
 
 
 /* dependencies */
-const path = require('path');
 const request = require('supertest');
 const { expect } = require('chai');
-const {
-  IncidentType,
-  apiVersion,
-  app
-} = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { IncidentType, apiVersion, app } = include(__dirname, '..', '..');
 
 
 describe('IncidentType Rest API', function () {
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
@@ -154,8 +149,6 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
 
 });

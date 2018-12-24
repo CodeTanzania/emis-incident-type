@@ -2,10 +2,10 @@
 
 
 /* dependencies */
-const path = require('path');
+const { include } = require('@lykmapipo/include');
 const { expect } = require('chai');
 const { Schema } = require('mongoose');
-const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { IncidentType } = include(__dirname, '..', '..');
 const { MODEL_NAME, NATURES, FAMILIES, CAP_CATEGORIES } = IncidentType;
 
 

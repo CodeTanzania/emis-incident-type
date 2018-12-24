@@ -2,17 +2,16 @@
 
 
 /* dependencies */
-const path = require('path');
 const faker = require('@benmaruchu/faker');
 const { expect } = require('chai');
-const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { IncidentType } = include(__dirname, '..', '..');
 
 
 describe('IncidentType Upsert', () => {
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
 
   let incidenttype;
 
@@ -70,8 +69,6 @@ describe('IncidentType Upsert', () => {
     });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
 
 });

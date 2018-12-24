@@ -5,16 +5,17 @@
 const path = require('path');
 const _ = require('lodash');
 const { expect } = require('chai');
-const { IncidentType } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { IncidentType } = include(__dirname, '..', '..');
+
 
 describe('IncidentType Seed', () => {
 
   const SEEDS_PATH = process.env.SEEDS_PATH;
   let incidenttypes = [];
 
-  before((done) => {
-    IncidentType.deleteMany(done);
-  });
+  before(done => clear(done));
 
   before(() => {
     process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
@@ -81,12 +82,8 @@ describe('IncidentType Seed', () => {
     });
   });
 
-  after((done) => {
-    IncidentType.deleteMany(done);
-  });
+  after(done => clear(done));
 
-  after(() => {
-    process.env.SEEDS_PATH = SEEDS_PATH;
-  });
+  after(() => process.env.SEEDS_PATH = SEEDS_PATH);
 
 });
