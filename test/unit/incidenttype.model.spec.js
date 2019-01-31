@@ -70,7 +70,7 @@ describe('IncidentType Statics', () => {
 
   it('should expose natures', () => {
     expect(IncidentType.NATURE_OTHER).to.exist;
-    expect(IncidentType.NATURE_OTHER).to.be.equal('Other');
+    expect(IncidentType.NATURE_OTHER).to.be.equal('Generic');
 
     expect(IncidentType.NATURE_NATURAL).to.exist;
     expect(IncidentType.NATURE_NATURAL).to.be.equal('Natural');
@@ -81,26 +81,28 @@ describe('IncidentType Statics', () => {
 
     expect(IncidentType.NATURES).to.exist;
     expect(IncidentType.NATURES).to.be.eql([
-      'Natural', 'Technological', 'Other'
+      'Natural', 'Technological', 'Generic'
     ]);
   });
 
   it('should expose families', () => {
     expect(IncidentType.FAMILY_OTHER).to.exist;
-    expect(IncidentType.FAMILY_OTHER).to.be.equal('Other');
+    expect(IncidentType.FAMILY_OTHER).to.be.equal('Generic');
 
     expect(IncidentType.FAMILIES).to.exist;
     expect(IncidentType.FAMILIES).to.be.eql([
       'Geophysical', 'Meteorological',
       'Hydrological', 'Climatological',
       'Biological', 'Extra-terrestrial',
-      'Technological', 'Other'
+      'Accident', 'Fire',
+      'Terrorism', 'Conflicts',
+      'Technological', 'Generic'
     ]);
   });
 
   it('should expose cap categories', () => {
     expect(IncidentType.CAP_CATEGORY_OTHER).to.exist;
-    expect(IncidentType.CAP_CATEGORY_OTHER).to.be.equal('Other');
+    expect(IncidentType.CAP_CATEGORY_OTHER).to.be.equal('Generic');
 
     expect(IncidentType.CAP_CATEGORIES).to.exist;
     expect(IncidentType.CAP_CATEGORIES).to.be.eql([
@@ -109,7 +111,7 @@ describe('IncidentType Statics', () => {
       'Rescue', 'Fire',
       'Health', 'Env',
       'Transport', 'Infra',
-      'CBRNE', 'Other'
+      'CBRNE', 'Generic'
     ]);
   });
 
