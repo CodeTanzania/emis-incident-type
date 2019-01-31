@@ -1,3 +1,9 @@
+#### 1.4.0 (2019-01-31)
+
+##### Refactors
+
+* **model:**  rename and add more incident natures & families ([2f5e640d](https://github.com/CodeTanzania/emis-incident-type/commit/2f5e640d6822ba2d4c7c3575e9ac9a02781899e1))
+
 # v1.3.2 - 2018-12-24
 - Allow copy nature, family, cap, color & icon from main incident type
 
