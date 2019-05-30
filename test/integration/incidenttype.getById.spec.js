@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -8,21 +7,19 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { IncidentType } = include(__dirname, '..', '..');
 
-
 describe('IncidentType getById', () => {
-
   before(done => clear(done));
 
   let incienttype = IncidentType.fake();
 
-  before((done) => {
+  before(done => {
     incienttype.post((error, created) => {
       incienttype = created;
       done(error, created);
     });
   });
 
-  it('should be able to get an instance', (done) => {
+  it('should be able to get an instance', done => {
     IncidentType.getById(incienttype._id, (error, found) => {
       expect(error).to.not.exist;
       expect(found).to.exist;
@@ -31,10 +28,10 @@ describe('IncidentType getById', () => {
     });
   });
 
-  it('should be able to get with options', (done) => {
+  it('should be able to get with options', done => {
     const options = {
       _id: incienttype._id,
-      select: 'name'
+      select: 'name',
     };
     IncidentType.getById(options, (error, found) => {
       expect(error).to.not.exist;
@@ -45,20 +42,14 @@ describe('IncidentType getById', () => {
       //...assert selection
       const fields = _.keys(found.toObject());
       expect(fields).to.have.length(2);
-      _.map([
-        'nature',
-        'family',
-        'createdAt',
-        'updatedAt'
-      ], function (field) {
+      _.map(['nature', 'family', 'createdAt', 'updatedAt'], function(field) {
         expect(fields).to.not.include(field);
       });
       done(error, found);
     });
-
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     const incienttype = IncidentType.fake();
     IncidentType.getById(incienttype._id, (error, found) => {
       expect(error).to.exist;
@@ -70,5 +61,4 @@ describe('IncidentType getById', () => {
   });
 
   after(done => clear(done));
-
 });

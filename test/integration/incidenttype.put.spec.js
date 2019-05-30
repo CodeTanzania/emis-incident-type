@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -8,21 +7,19 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { IncidentType } = include(__dirname, '..', '..');
 
-
 describe('IncidentType Static Put', () => {
-
   before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
-  before((done) => {
+  before(done => {
     incidenttype.post((error, created) => {
       incidenttype = created;
       done(error, created);
     });
   });
 
-  it('should be able to put', (done) => {
+  it('should be able to put', done => {
     incidenttype = incidenttype.fakeOnly('name');
     IncidentType.put(incidenttype._id, incidenttype, (error, updated) => {
       expect(error).to.not.exist;
@@ -33,7 +30,7 @@ describe('IncidentType Static Put', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     const fake = IncidentType.fake().toObject();
     IncidentType.put(fake._id, _.omit(fake, '_id'), (error, updated) => {
       expect(error).to.exist;
@@ -45,25 +42,21 @@ describe('IncidentType Static Put', () => {
   });
 
   after(done => clear(done));
-
 });
 
-
 describe('IncidentType Instance Put', () => {
-
   before(done => clear(done));
-
 
   let incidenttype = IncidentType.fake();
 
-  before((done) => {
+  before(done => {
     incidenttype.post((error, created) => {
       incidenttype = created;
       done(error, created);
     });
   });
 
-  it('should be able to put', (done) => {
+  it('should be able to put', done => {
     incidenttype = incidenttype.fakeOnly('name');
     incidenttype.put((error, updated) => {
       expect(error).to.not.exist;
@@ -74,7 +67,7 @@ describe('IncidentType Instance Put', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     incidenttype.put((error, updated) => {
       expect(error).to.not.exist;
       expect(updated).to.exist;
@@ -84,6 +77,4 @@ describe('IncidentType Instance Put', () => {
   });
 
   after(done => clear(done));
-
-
 });

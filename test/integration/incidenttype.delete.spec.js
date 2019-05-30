@@ -1,27 +1,24 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { IncidentType } = include(__dirname, '..', '..');
 
-
 describe('IncidentType Static Delete', () => {
-
   before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
-  before((done) => {
+  before(done => {
     incidenttype.post((error, created) => {
       incidenttype = created;
       done(error, created);
     });
   });
 
-  it('should be able to delete', (done) => {
+  it('should be able to delete', done => {
     IncidentType.del(incidenttype._id, (error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -30,7 +27,7 @@ describe('IncidentType Static Delete', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     IncidentType.del(incidenttype._id, (error, deleted) => {
       expect(error).to.exist;
       // expect(error.status).to.exist;
@@ -41,23 +38,21 @@ describe('IncidentType Static Delete', () => {
   });
 
   after(done => clear(done));
-
 });
 
 describe('IncidentType Instance Delete', () => {
-
   before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
-  before((done) => {
+  before(done => {
     incidenttype.post((error, created) => {
       incidenttype = created;
       done(error, created);
     });
   });
 
-  it('should be able to delete', (done) => {
+  it('should be able to delete', done => {
     incidenttype.del((error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -66,7 +61,7 @@ describe('IncidentType Instance Delete', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     incidenttype.del((error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -76,5 +71,4 @@ describe('IncidentType Instance Delete', () => {
   });
 
   after(done => clear(done));
-
 });

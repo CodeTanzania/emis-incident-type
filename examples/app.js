@@ -1,10 +1,8 @@
 'use strict';
 
-
 /* ensure mongodb uri */
 process.env.MONGODB_URI =
-  (process.env.MONGODB_URI || 'mongodb://localhost/emis-incidenttype');
-
+  process.env.MONGODB_URI || 'mongodb://localhost/emis-incidenttype';
 
 /* dependencies */
 const path = require('path');
@@ -14,13 +12,10 @@ const { start, get, mount } = require('@lykmapipo/express-common');
 const { connect } = require('@lykmapipo/mongoose-common');
 const { IncidentType, info, incidentTypeRouter } = include(__dirname, '..');
 
-
 // establish mongodb connection
-connect((error) => {
-
+connect(error => {
   // seed incident types
   IncidentType.seed((error, results) => {
-
     // expose module info
     get('/', (request, response) => {
       response.status(200);
@@ -34,7 +29,5 @@ connect((error) => {
     start((error, env) => {
       console.log(`visit http://0.0.0.0:${env.PORT}`);
     });
-
   });
-
 });

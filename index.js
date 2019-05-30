@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @name emis-incident-type
  * @module emis-incident-type
@@ -30,15 +29,17 @@
  *
  */
 
-
 /* dependencies */
 const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
 const { app, mount } = require('@lykmapipo/express-common');
 const pkg = include(__dirname, 'package.json');
 const IncidentType = include(__dirname, 'lib', 'incidenttype.model');
-const incidentTypeRouter = include(__dirname, 'lib', 'incidenttype.http.router');
-
+const incidentTypeRouter = include(
+  __dirname,
+  'lib',
+  'incidenttype.http.router'
+);
 
 /**
  * @name info
@@ -49,11 +50,20 @@ const incidentTypeRouter = include(__dirname, 'lib', 'incidenttype.http.router')
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.info = _.merge({}, _.pick(pkg, [
-  'name', 'description', 'version', 'license',
-  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
-]));
-
+exports.info = _.merge(
+  {},
+  _.pick(pkg, [
+    'name',
+    'description',
+    'version',
+    'license',
+    'homepage',
+    'repository',
+    'bugs',
+    'sandbox',
+    'contributors',
+  ])
+);
 
 /**
  * @name IncidentType
@@ -66,7 +76,6 @@ exports.info = _.merge({}, _.pick(pkg, [
  */
 exports.IncidentType = IncidentType;
 
-
 /**
  * @name incidentTypeRouter
  * @description incidentType http router
@@ -77,7 +86,6 @@ exports.IncidentType = IncidentType;
  * @version 0.1.0
  */
 exports.incidentTypeRouter = incidentTypeRouter;
-
 
 /**
  * @name apiVersion
@@ -90,14 +98,11 @@ exports.incidentTypeRouter = incidentTypeRouter;
  */
 exports.apiVersion = incidentTypeRouter.version;
 
-
 /* export app */
 Object.defineProperty(exports, 'app', {
   get() {
-
     /*@todo bind oauth middlewares authenticate, token, authorize */
     mount(incidentTypeRouter);
     return app;
-  }
-
+  },
 });
