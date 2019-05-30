@@ -6,7 +6,8 @@
   "scripts": {
     "test": "grunt test",
     "integration": "grunt integration",
-    "dev": "BASE_PATH=./examples node ./examples/app.js"
+    "dev": "BASE_PATH=./examples node ./examples/app.js",
+    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent"
   },
   "repository": {
     "type": "git",
@@ -60,16 +61,8 @@
         "resource": "IncidentType",
         "schema": "https://emis-incident-type.herokuapp.com/v1/incidenttypes/schema",
         "link": "https://emis-incident-type.herokuapp.com/v1/incidenttypes",
-        "scopes": [
-          "incidenttype:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch",
-          "delete"
-        ]
+        "scopes": ["incidenttype:*"],
+        "methods": ["get", "post", "put", "patch", "delete"]
       }
     ]
   },
@@ -86,6 +79,7 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": ">=5.4.19",
+    "prettier": "^1.17.1",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
