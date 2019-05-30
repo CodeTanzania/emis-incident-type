@@ -17,7 +17,7 @@ describe('IncidentType Rest API', function () {
 
   it('should handle HTTP POST on /incidenttypes', (done) => {
     request(app)
-      .post(`/v${apiVersion}/incidenttypes`)
+      .post(`/${apiVersion}/incidenttypes`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(incidenttype)
@@ -41,7 +41,7 @@ describe('IncidentType Rest API', function () {
 
   it('should handle HTTP GET on /incidenttypes', (done) => {
     request(app)
-      .get(`/v${apiVersion}/incidenttypes`)
+      .get(`/${apiVersion}/incidenttypes`)
       .set('Accept', 'application/json')
       .expect(200)
       .expect('Content-Type', /json/)
@@ -64,7 +64,7 @@ describe('IncidentType Rest API', function () {
 
   it('should handle HTTP GET on /incidenttypes/id:', (done) => {
     request(app)
-      .get(`/v${apiVersion}/incidenttypes/${incidenttype._id}`)
+      .get(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end((error, response) => {
@@ -84,7 +84,7 @@ describe('IncidentType Rest API', function () {
   it('should handle HTTP PATCH on /incidenttypes/id:', (done) => {
     const { name } = incidenttype.fakeOnly('name');
     request(app)
-      .patch(`/v${apiVersion}/incidenttypes/${incidenttype._id}`)
+      .patch(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send({ name })
@@ -109,7 +109,7 @@ describe('IncidentType Rest API', function () {
   it('should handle HTTP PUT on /incidenttypes/id:', (done) => {
     const { name } = incidenttype.fakeOnly('name');
     request(app)
-      .put(`/v${apiVersion}/incidenttypes/${incidenttype._id}`)
+      .put(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send({ name })
@@ -133,7 +133,7 @@ describe('IncidentType Rest API', function () {
 
   it('should handle HTTP DELETE on /incidenttypes/:id', (done) => {
     request(app)
-      .delete(`/v${apiVersion}/incidenttypes/${incidenttype._id}`)
+      .delete(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end((error, response) => {
