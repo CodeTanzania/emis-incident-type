@@ -1,3 +1,14 @@
+#### 1.5.0 (2019-05-30)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([670f638a](https://github.com/CodeTanzania/emis-incident-type/commit/670f638a72a655f038694c585cc4af492a601c00))
+*  force latest dependencies ([e20ff615](https://github.com/CodeTanzania/emis-incident-type/commit/e20ff61518857cc3e70ebe87d9adaf48400314bf))
+
+##### Refactors
+
+* **deps:**  migrate to new apis ([d513ee8f](https://github.com/CodeTanzania/emis-incident-type/commit/d513ee8fd8077d755e1ebbaa9068e78352b91614))
+
 #### 1.4.0 (2019-01-31)
 
 ##### Refactors
