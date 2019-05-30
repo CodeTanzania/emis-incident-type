@@ -34,7 +34,7 @@
 /* dependencies */
 const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
-const app = require('@lykmapipo/express-common');
+const { app, mount } = require('@lykmapipo/express-common');
 const pkg = include(__dirname, 'package.json');
 const IncidentType = include(__dirname, 'lib', 'incidenttype.model');
 const incidentTypeRouter = include(__dirname, 'lib', 'incidenttype.http.router');
@@ -88,7 +88,7 @@ exports.incidentTypeRouter = incidentTypeRouter;
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.apiVersion = incidentTypeRouter.apiVersion;
+exports.apiVersion = incidentTypeRouter.version;
 
 
 /* export app */
@@ -96,7 +96,7 @@ Object.defineProperty(exports, 'app', {
   get() {
 
     /*@todo bind oauth middlewares authenticate, token, authorize */
-    app.mount(incidentTypeRouter);
+    mount(incidentTypeRouter);
     return app;
   }
 
