@@ -5,8 +5,6 @@ process.env.MONGODB_URI =
   process.env.MONGODB_URI || 'mongodb://localhost/emis-incidenttype';
 
 /* dependencies */
-const path = require('path');
-const async = require('async');
 const { include } = require('@lykmapipo/include');
 const { start, get, mount } = require('@lykmapipo/express-common');
 const { connect } = require('@lykmapipo/mongoose-common');
