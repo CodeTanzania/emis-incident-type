@@ -1,13 +1,14 @@
 {
   "name": "@codetanzania/emis-incident-type",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A representation of an entity which classify emergency(or disaster) from the most generalised(nature and family) to the most specific (main event and peril).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
     "integration": "grunt integration",
     "dev": "BASE_PATH=./examples node ./examples/app.js",
-    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent"
+    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent",
+    "changelog": "changelog"
   },
   "repository": {
     "type": "git",
@@ -61,16 +62,8 @@
         "resource": "IncidentType",
         "schema": "https://emis-incident-type.herokuapp.com/v1/incidenttypes/schema",
         "link": "https://emis-incident-type.herokuapp.com/v1/incidenttypes",
-        "scopes": [
-          "incidenttype:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch",
-          "delete"
-        ]
+        "scopes": ["incidenttype:*"],
+        "methods": ["get", "post", "put", "patch", "delete"]
       }
     ]
   },
@@ -79,6 +72,7 @@
     "@codetanzania/majifix-common": "^0.12.4",
     "@lykmapipo/mongoose-test-helpers": ">=0.7.4",
     "chai": "^4.2.0",
+    "generate-changelog": "^1.7.1",
     "grunt": "^1.0.4",
     "grunt-apidoc": "^0.11.0",
     "grunt-contrib-jshint": "^2.1.0",
