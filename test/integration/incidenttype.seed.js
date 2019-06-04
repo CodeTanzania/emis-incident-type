@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const path = require('path');
 const _ = require('lodash');
@@ -9,9 +8,7 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { IncidentType } = include(__dirname, '..', '..');
 
-
 describe('IncidentType Seed', () => {
-
   const SEEDS_PATH = process.env.SEEDS_PATH;
   let incidenttypes = [];
 
@@ -21,7 +18,7 @@ describe('IncidentType Seed', () => {
     process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
   });
 
-  it('should seed provided', (done) => {
+  it('should seed provided', done => {
     const seed = IncidentType.fake();
     IncidentType.seed(seed, (error, seeded) => {
       expect(error).to.not.exist;
@@ -36,7 +33,7 @@ describe('IncidentType Seed', () => {
     });
   });
 
-  it('should seed provided', (done) => {
+  it('should seed provided', done => {
     const seed = [IncidentType.fake(), IncidentType.fake()];
     IncidentType.seed(seed, (error, seeded) => {
       expect(error).to.not.exist;
@@ -52,7 +49,7 @@ describe('IncidentType Seed', () => {
     });
   });
 
-  it('should not throw if provided exist', (done) => {
+  it('should not throw if provided exist', done => {
     IncidentType.seed(incidenttypes, (error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -63,7 +60,7 @@ describe('IncidentType Seed', () => {
     });
   });
 
-  it('should be able to seed from environment', (done) => {
+  it('should be able to seed from environment', done => {
     IncidentType.seed((error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -73,7 +70,7 @@ describe('IncidentType Seed', () => {
     });
   });
 
-  it('should not throw if seed from environment exist', (done) => {
+  it('should not throw if seed from environment exist', done => {
     IncidentType.seed((error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -84,6 +81,5 @@ describe('IncidentType Seed', () => {
 
   after(done => clear(done));
 
-  after(() => process.env.SEEDS_PATH = SEEDS_PATH);
-
+  after(() => (process.env.SEEDS_PATH = SEEDS_PATH));
 });

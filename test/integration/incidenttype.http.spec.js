@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const request = require('supertest');
 const { expect } = require('chai');
@@ -8,14 +7,12 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { IncidentType, apiVersion, app } = include(__dirname, '..', '..');
 
-
-describe('IncidentType Rest API', function () {
-
+describe('IncidentType Rest API', function() {
   before(done => clear(done));
 
   let incidenttype = IncidentType.fake();
 
-  it('should handle HTTP POST on /incidenttypes', (done) => {
+  it('should handle HTTP POST on /incidenttypes', done => {
     request(app)
       .post(`/${apiVersion}/incidenttypes`)
       .set('Accept', 'application/json')
@@ -39,7 +36,7 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  it('should handle HTTP GET on /incidenttypes', (done) => {
+  it('should handle HTTP GET on /incidenttypes', done => {
     request(app)
       .get(`/${apiVersion}/incidenttypes`)
       .set('Accept', 'application/json')
@@ -62,7 +59,7 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  it('should handle HTTP GET on /incidenttypes/id:', (done) => {
+  it('should handle HTTP GET on /incidenttypes/id:', done => {
     request(app)
       .get(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
@@ -81,7 +78,7 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  it('should handle HTTP PATCH on /incidenttypes/id:', (done) => {
+  it('should handle HTTP PATCH on /incidenttypes/id:', done => {
     const { name } = incidenttype.fakeOnly('name');
     request(app)
       .patch(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
@@ -106,7 +103,7 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  it('should handle HTTP PUT on /incidenttypes/id:', (done) => {
+  it('should handle HTTP PUT on /incidenttypes/id:', done => {
     const { name } = incidenttype.fakeOnly('name');
     request(app)
       .put(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
@@ -131,7 +128,7 @@ describe('IncidentType Rest API', function () {
       });
   });
 
-  it('should handle HTTP DELETE on /incidenttypes/:id', (done) => {
+  it('should handle HTTP DELETE on /incidenttypes/:id', done => {
     request(app)
       .delete(`/${apiVersion}/incidenttypes/${incidenttype._id}`)
       .set('Accept', 'application/json')
@@ -150,5 +147,4 @@ describe('IncidentType Rest API', function () {
   });
 
   after(done => clear(done));
-
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { include } = require('@lykmapipo/include');
 const { expect } = require('chai');
@@ -8,9 +7,7 @@ const { Schema } = require('mongoose');
 const { IncidentType } = include(__dirname, '..', '..');
 const { MODEL_NAME, NATURES, FAMILIES, CAP_CATEGORIES } = IncidentType;
 
-
 describe('IncidentType Schema', () => {
-
   it('should have main field', () => {
     const main = IncidentType.path('main');
 
@@ -224,5 +221,4 @@ describe('IncidentType Schema', () => {
     expect(risks.options.fake).to.exist;
     expect(risks.options.fake).to.be.an('object');
   });
-
 });
